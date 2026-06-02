@@ -4,242 +4,225 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Arundhati Ubhad — Data Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --navy: #0d1117;
-    --navy2: #161b22;
-    --navy3: #21262d;
-    --border: rgba(255,255,255,0.08);
-    --accent: #58a6ff;
-    --accent2: #3fb950;
-    --amber: #e3b341;
-    --coral: #f78166;
-    --text: #e6edf3;
-    --muted: #8b949e;
-    --tag-bg: rgba(88,166,255,0.1);
-    --tag-border: rgba(88,166,255,0.3);
+    --bg: #f7f5f0;
+    --bg2: #ffffff;
+    --bg3: #eeecea;
+    --border: rgba(0,0,0,0.08);
+    --border2: rgba(0,0,0,0.14);
+    --text: #1a1a1a;
+    --muted: #6b6b6b;
+    --hint: #999;
+    --accent: #2563eb;
+    --accent2: #16a34a;
+    --amber: #b45309;
+    --coral: #c2410c;
+    --tag-blue-bg: rgba(37,99,235,0.07);
+    --tag-blue-border: rgba(37,99,235,0.2);
+    --tag-green-bg: rgba(22,163,74,0.07);
+    --tag-green-border: rgba(22,163,74,0.2);
+    --tag-amber-bg: rgba(180,83,9,0.07);
+    --tag-amber-border: rgba(180,83,9,0.2);
+    --tag-coral-bg: rgba(194,65,12,0.07);
+    --tag-coral-border: rgba(194,65,12,0.2);
+    --tag-purple-bg: rgba(109,40,217,0.07);
+    --tag-purple-border: rgba(109,40,217,0.2);
+    --purple: #6d28d9;
   }
 
   html { scroll-behavior: smooth; }
 
   body {
-    font-family: 'Outfit', sans-serif;
-    background: var(--navy);
+    font-family: 'Manrope', sans-serif;
+    background: var(--bg);
     color: var(--text);
     line-height: 1.7;
     font-size: 16px;
   }
 
-  /* NAV */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; justify-content: space-between; align-items: center;
     padding: 1rem 2.5rem;
-    background: rgba(13,17,23,0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(247,245,240,0.88);
+    backdrop-filter: blur(14px);
     border-bottom: 1px solid var(--border);
   }
   .nav-logo {
     font-family: 'DM Mono', monospace;
-    font-size: 14px;
-    color: var(--accent);
-    letter-spacing: 0.05em;
+    font-size: 13px; color: var(--accent); letter-spacing: 0.05em;
   }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a {
     font-size: 13px; color: var(--muted); text-decoration: none;
-    letter-spacing: 0.04em; transition: color 0.2s;
+    letter-spacing: 0.04em; transition: color 0.2s; font-weight: 500;
   }
   .nav-links a:hover { color: var(--text); }
 
-  /* SECTIONS */
-  section { padding: 6rem 0; max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+  section { padding: 6rem 0; max-width: 920px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
 
-  /* HERO */
   .hero {
     min-height: 100vh;
     display: flex; flex-direction: column; justify-content: center;
     padding-top: 8rem;
-    max-width: 900px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;
+    max-width: 920px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;
   }
   .hero-label {
     font-family: 'DM Mono', monospace;
-    font-size: 13px; color: var(--accent);
-    letter-spacing: 0.1em; margin-bottom: 1.5rem;
+    font-size: 12px; color: var(--accent);
+    letter-spacing: 0.14em; margin-bottom: 1.5rem; text-transform: uppercase;
   }
   .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.8rem, 6vw, 5rem);
-    font-weight: 600;
-    line-height: 1.1;
-    margin-bottom: 1.5rem;
-    color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 6rem);
+    font-weight: 600; line-height: 1.0;
+    margin-bottom: 1.75rem; color: var(--text); letter-spacing: -0.01em;
   }
-  .hero h1 span { color: var(--accent); }
+  .hero h1 em { font-style: italic; color: var(--accent); }
   .hero-sub {
-    font-size: 1.15rem; color: var(--muted);
-    max-width: 560px; margin-bottom: 2.5rem; font-weight: 300;
+    font-size: 1.05rem; color: var(--muted);
+    max-width: 520px; margin-bottom: 2.5rem; font-weight: 400; line-height: 1.75;
   }
-  .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+
   .btn {
     display: inline-flex; align-items: center; gap: 8px;
-    padding: 0.65rem 1.4rem;
-    border-radius: 6px; font-size: 14px; font-weight: 500;
-    text-decoration: none; transition: all 0.2s; cursor: pointer;
-    font-family: 'Outfit', sans-serif;
+    padding: 0.6rem 1.3rem; border-radius: 6px;
+    font-size: 13px; font-weight: 500; text-decoration: none;
+    transition: all 0.18s; cursor: pointer;
+    font-family: 'Manrope', sans-serif; letter-spacing: 0.01em;
   }
-  .btn-primary {
-    background: var(--accent); color: #0d1117;
-    border: none;
-  }
-  .btn-primary:hover { background: #79c0ff; transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent; color: var(--text);
-    border: 1px solid var(--border);
-  }
-  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+  .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
+  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
+  .btn-outline:hover { border-color: var(--text); transform: translateY(-1px); }
 
-  /* SECTION HEADER */
   .section-label {
     font-family: 'DM Mono', monospace;
-    font-size: 12px; color: var(--accent);
-    letter-spacing: 0.12em; margin-bottom: 0.5rem;
-    text-transform: uppercase;
+    font-size: 11px; color: var(--hint);
+    letter-spacing: 0.14em; margin-bottom: 0.5rem; text-transform: uppercase;
   }
   .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 600;
-    margin-bottom: 3rem; color: var(--text);
-  }
-  .divider {
-    width: 40px; height: 2px;
-    background: var(--accent); margin-bottom: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem; font-weight: 600;
+    margin-bottom: 3rem; color: var(--text); letter-spacing: -0.01em;
   }
 
-  /* ABOUT */
-  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-  .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 300; font-size: 1.02rem; }
-  .about-text p strong { color: var(--text); font-weight: 500; }
+  .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
+  .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 400; font-size: 1rem; line-height: 1.8; }
+  .about-text p strong { color: var(--text); font-weight: 600; }
   .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .stat-card {
-    background: var(--navy2);
-    border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.25rem;
-    text-align: center;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 1.25rem; text-align: center;
   }
   .stat-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem; font-weight: 600; color: var(--accent);
-    line-height: 1;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem; font-weight: 600; color: var(--accent); line-height: 1;
   }
-  .stat-label { font-size: 12px; color: var(--muted); margin-top: 4px; letter-spacing: 0.04em; }
+  .stat-label { font-size: 11px; color: var(--hint); margin-top: 5px; letter-spacing: 0.04em; font-family: 'DM Mono', monospace; }
 
-  /* PROJECTS */
-  .projects-grid { display: grid; gap: 1.5rem; }
+  .projects-grid { display: grid; gap: 1.25rem; }
   .project-card {
-    background: var(--navy2);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 1.75rem 2rem;
-    transition: border-color 0.2s, transform 0.2s;
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 12px; padding: 1.75rem 2rem;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
     position: relative; overflow: hidden;
   }
-  .project-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: transparent;
-    transition: background 0.2s;
+  .project-card:hover {
+    border-color: var(--border2);
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
   }
-  .project-card:hover { border-color: rgba(88,166,255,0.3); transform: translateY(-2px); }
-  .project-card:hover::before { background: var(--accent); }
-  .project-card.amber:hover::before { background: var(--amber); }
-  .project-card.green:hover::before { background: var(--accent2); }
-  .project-card.coral:hover::before { background: var(--coral); }
+  .project-card::after {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: transparent; transition: background 0.2s;
+  }
+  .project-card.blue:hover::after   { background: var(--accent); }
+  .project-card.amber:hover::after  { background: var(--amber); }
+  .project-card.green:hover::after  { background: var(--accent2); }
+  .project-card.coral:hover::after  { background: var(--coral); }
+  .project-card.purple:hover::after { background: var(--purple); }
 
-  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.75rem; }
+  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
   .project-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem; font-weight: 600; color: var(--text);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em;
   }
   .project-link {
-    color: var(--muted); text-decoration: none;
-    font-size: 13px; display: flex; align-items: center; gap: 4px;
-    transition: color 0.2s;
+    color: var(--hint); text-decoration: none;
+    font-size: 12px; display: flex; align-items: center; gap: 4px;
+    transition: color 0.2s; font-family: 'DM Mono', monospace;
+    flex-shrink: 0; margin-left: 1rem; padding-top: 3px;
   }
   .project-link:hover { color: var(--accent); }
-  .project-link svg { width: 14px; height: 14px; }
-  .project-desc { color: var(--muted); font-size: 0.93rem; font-weight: 300; margin-bottom: 1.25rem; line-height: 1.6; }
+  .project-link svg { width: 12px; height: 12px; }
+  .project-desc { color: var(--muted); font-size: 0.9rem; font-weight: 400; margin-bottom: 1.25rem; line-height: 1.7; }
   .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
   .tag {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; padding: 3px 10px;
-    border-radius: 20px;
-    background: var(--tag-bg); color: var(--accent);
-    border: 1px solid var(--tag-border);
-    letter-spacing: 0.03em;
+    font-size: 10px; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.03em;
   }
-  .tag.amber { background: rgba(227,179,65,0.1); color: var(--amber); border-color: rgba(227,179,65,0.3); }
-  .tag.green { background: rgba(63,185,80,0.1); color: var(--accent2); border-color: rgba(63,185,80,0.3); }
-  .tag.coral { background: rgba(247,129,102,0.1); color: var(--coral); border-color: rgba(247,129,102,0.3); }
+  .tag.blue   { background: var(--tag-blue-bg);   color: var(--accent);  border: 1px solid var(--tag-blue-border); }
+  .tag.green  { background: var(--tag-green-bg);  color: var(--accent2); border: 1px solid var(--tag-green-border); }
+  .tag.amber  { background: var(--tag-amber-bg);  color: var(--amber);   border: 1px solid var(--tag-amber-border); }
+  .tag.coral  { background: var(--tag-coral-bg);  color: var(--coral);   border: 1px solid var(--tag-coral-border); }
+  .tag.purple { background: var(--tag-purple-bg); color: var(--purple);  border: 1px solid var(--tag-purple-border); }
 
-  /* SKILLS */
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.25rem; }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
   .skill-group {
-    background: var(--navy2);
-    border: 1px solid var(--border);
+    background: var(--bg2); border: 1px solid var(--border);
     border-radius: 10px; padding: 1.25rem 1.5rem;
   }
   .skill-group-title {
     font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--accent);
-    letter-spacing: 0.1em; text-transform: uppercase;
-    margin-bottom: 0.75rem;
+    font-size: 10px; color: var(--hint);
+    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.85rem;
   }
   .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
   .skill-pill {
     font-size: 12px; padding: 4px 10px;
-    background: var(--navy3);
-    border: 1px solid var(--border);
-    border-radius: 4px; color: var(--muted);
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 4px; color: var(--muted); font-weight: 500;
   }
 
-  /* CONTACT */
-  .contact-grid { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .contact-intro { color: var(--muted); margin-bottom: 2rem; font-weight: 400; max-width: 480px; line-height: 1.75; }
+  .contact-grid { display: flex; gap: 0.75rem; flex-wrap: wrap; }
   .contact-link {
     display: flex; align-items: center; gap: 8px;
-    padding: 0.75rem 1.5rem;
-    background: var(--navy2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    padding: 0.7rem 1.4rem; background: var(--bg2);
+    border: 1px solid var(--border2); border-radius: 8px;
     text-decoration: none; color: var(--text);
-    font-size: 14px; transition: all 0.2s;
+    font-size: 13px; font-weight: 500; transition: all 0.18s;
   }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
-  .contact-link svg { width: 16px; height: 16px; }
+  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 2px 12px rgba(37,99,235,0.08); }
+  .contact-link svg { width: 15px; height: 15px; flex-shrink: 0; }
 
-  /* FOOTER */
   footer {
     text-align: center; padding: 2rem;
     border-top: 1px solid var(--border);
-    color: var(--muted); font-size: 13px;
-    font-family: 'DM Mono', monospace;
+    color: var(--hint); font-size: 12px; font-family: 'DM Mono', monospace;
   }
 
+  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
   @media (max-width: 640px) {
-    .about-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1rem; }
+    .nav-links { gap: 1.25rem; }
     section { padding: 4rem 1.25rem; }
     .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .project-card { padding: 1.35rem 1.25rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav>
   <span class="nav-logo">arundhati.ubhad</span>
   <ul class="nav-links">
@@ -250,10 +233,9 @@
   </ul>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <p class="hero-label">// analytics engineer & data analyst</p>
-  <h1>Arundhati<br/><span>Ubhad</span></h1>
+  <p class="hero-label">Analytics Engineer &amp; Data Analyst</p>
+  <h1>Arundhati<br/><em>Ubhad</em></h1>
   <p class="hero-sub">
     M.S. Data Analytics Engineering · Northeastern University.<br/>
     Building reliable data pipelines, dimensional models, and analytics products with SQL, Python, dbt, and Snowflake.
@@ -265,11 +247,10 @@
   </div>
 </div>
 
-<!-- ABOUT -->
 <section id="about">
   <p class="section-label">01 · About</p>
   <h2 class="section-title">Who I Am</h2>
-  <div class="about-grid">
+  <div class="about-grid fade-in">
     <div class="about-text">
       <p>I am a <strong>data professional</strong> with 3+ years of industry experience in data analysis and quality, currently completing my <strong>M.S. in Data Analytics Engineering</strong> at Northeastern University (GPA: 3.95).</p>
       <p>My work spans the full data stack — from building <strong>ELT pipelines on AWS</strong> and designing <strong>dimensional models</strong> to building KPI dashboards and applying <strong>machine learning</strong> to real-world datasets.</p>
@@ -278,64 +259,56 @@
     <div class="about-stats">
       <div class="stat-card">
         <div class="stat-number">3+</div>
-        <div class="stat-label">Years of Experience</div>
+        <div class="stat-label">Years Experience</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">3.95</div>
         <div class="stat-label">Graduate GPA</div>
       </div>
       <div class="stat-card">
-        <div class="stat-number">4</div>
+        <div class="stat-number">5</div>
         <div class="stat-label">Projects</div>
       </div>
       <div class="stat-card">
         <div class="stat-number">10+</div>
-        <div class="stat-label">Tools & Technologies</div>
+        <div class="stat-label">Tools & Tech</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PROJECTS -->
 <section id="projects">
   <p class="section-label">02 · Projects</p>
   <h2 class="section-title">What I've Built</h2>
-
   <div class="projects-grid">
 
-    <!-- dbt Airbnb -->
-    <div class="project-card">
+    <div class="project-card blue fade-in">
       <div class="project-header">
         <h3 class="project-title">Airbnb Analytics Pipeline</h3>
-        <a href="https://github.com/ArundhatiU" target="_blank" class="project-link">
+        <a href="https://github.com/ArundhatiU/dbt-airbnb-pipeline" target="_blank" class="project-link">
           GitHub
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
-      <p class="project-desc">
-        Production-style dbt Core project on Snowflake implementing a layered architecture (staging → intermediate → marts) with SCD Type 2 snapshots, data quality testing, and end-to-end lineage documentation.
-      </p>
+      <p class="project-desc">Production-style dbt Core project on Snowflake implementing a layered architecture (staging → intermediate → marts) with SCD Type 2 snapshots, data quality testing, and end-to-end lineage documentation.</p>
       <div class="project-tags">
-        <span class="tag">dbt Core</span>
-        <span class="tag">Snowflake</span>
-        <span class="tag">SQL</span>
-        <span class="tag">Data Modeling</span>
-        <span class="tag">SCD Type 2</span>
+        <span class="tag blue">dbt Core</span>
+        <span class="tag blue">Snowflake</span>
+        <span class="tag blue">SQL</span>
+        <span class="tag blue">Data Modeling</span>
+        <span class="tag blue">SCD Type 2</span>
       </div>
     </div>
 
-    <!-- Inflation Intelligence -->
-    <div class="project-card amber">
+    <div class="project-card amber fade-in">
       <div class="project-header">
         <h3 class="project-title">Inflation Intelligence</h3>
-        <a href="https://github.com/ArundhatiU" target="_blank" class="project-link">
+        <a href="https://github.com/ArundhatiU/IE6750-Project1-OnPrem" target="_blank" class="project-link">
           GitHub
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
-      <p class="project-desc">
-        Serverless ELT pipeline on AWS ingesting U.S. inflation and unemployment data into Parquet datasets with columnar partitioning. Lambda-triggered Glue workflows automate end-to-end refresh with KPI dashboards built in Tableau.
-      </p>
+      <p class="project-desc">Serverless ELT pipeline on AWS ingesting U.S. inflation and unemployment data into Parquet datasets with columnar partitioning. Lambda-triggered Glue workflows automate end-to-end refresh with KPI dashboards built in Tableau.</p>
       <div class="project-tags">
         <span class="tag amber">AWS Glue</span>
         <span class="tag amber">S3 · Lambda · Athena</span>
@@ -345,29 +318,42 @@
       </div>
     </div>
 
-    <!-- Fitness Centers -->
-    <div class="project-card green">
+    <div class="project-card green fade-in">
       <div class="project-header">
-        <h3 class="project-title">Operational Analytics — Fitness Centers</h3>
-        <a href="https://github.com/ArundhatiU" target="_blank" class="project-link">
+        <h3 class="project-title">NLP Sentiment Analysis</h3>
+        <a href="https://github.com/ArundhatiU/NLP_Sentiment_Analysis" target="_blank" class="project-link">
           GitHub
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
-      <p class="project-desc">
-        Starflake dimensional model with two fact tables and conformed dimensions enabling cross-location analytics. Talend ETL pipelines with SCD Type 4 and data validation, plus Tableau dashboards with drill-down navigation.
-      </p>
+      <p class="project-desc">Sentiment classification on Amazon Fine Food Reviews using fine-tuned RoBERTa transformer. Full NLP pipeline covering preprocessing, model training, evaluation, and inference on 500K+ reviews.</p>
       <div class="project-tags">
-        <span class="tag green">Talend</span>
-        <span class="tag green">SQL</span>
-        <span class="tag green">Dimensional Modeling</span>
-        <span class="tag green">SCD Type 4</span>
-        <span class="tag green">Tableau</span>
+        <span class="tag green">RoBERTa</span>
+        <span class="tag green">NLP</span>
+        <span class="tag green">Python</span>
+        <span class="tag green">HuggingFace</span>
+        <span class="tag green">scikit-learn</span>
       </div>
     </div>
 
-    <!-- VTT GenAI -->
-    <div class="project-card coral">
+    <div class="project-card purple fade-in">
+      <div class="project-header">
+        <h3 class="project-title">Music Streaming Database</h3>
+        <a href="https://github.com/ArundhatiU/music_streaming_db" target="_blank" class="project-link">
+          GitHub
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+        </a>
+      </div>
+      <p class="project-desc">Relational database design for a music streaming platform — schema modeling, normalization, and analytical SQL queries covering user listening behavior, artist performance, and subscription analytics.</p>
+      <div class="project-tags">
+        <span class="tag purple">SQL</span>
+        <span class="tag purple">Database Design</span>
+        <span class="tag purple">Schema Modeling</span>
+        <span class="tag purple">MySQL</span>
+      </div>
+    </div>
+
+    <div class="project-card coral fade-in">
       <div class="project-header">
         <h3 class="project-title">VTT — Vision-to-Text Image Captioning</h3>
         <a href="https://github.com/ArundhatiU/GenAI_Project" target="_blank" class="project-link">
@@ -375,14 +361,12 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
         </a>
       </div>
-      <p class="project-desc">
-        Modular deep learning pipeline bridging Computer Vision and NLP using a ResNet-50 encoder and LSTM decoder. Trained on Flickr8k/30k datasets, achieving BLEU-4 of 0.1199 with Beam Search decoding outperforming greedy and frequency baselines.
-      </p>
+      <p class="project-desc">Modular deep learning pipeline bridging Computer Vision and NLP using a ResNet-50 encoder and LSTM decoder. Trained on Flickr8k/30k datasets, achieving BLEU-4 of 0.1199 with Beam Search decoding outperforming greedy and frequency baselines.</p>
       <div class="project-tags">
         <span class="tag coral">ResNet-50</span>
         <span class="tag coral">LSTM</span>
-        <span class="tag coral">NLP</span>
         <span class="tag coral">PyTorch</span>
+        <span class="tag coral">NLP</span>
         <span class="tag coral">BLEU · METEOR · BERTScore</span>
       </div>
     </div>
@@ -390,11 +374,10 @@
   </div>
 </section>
 
-<!-- SKILLS -->
 <section id="skills">
   <p class="section-label">03 · Skills</p>
   <h2 class="section-title">Technical Stack</h2>
-  <div class="skills-grid">
+  <div class="skills-grid fade-in">
     <div class="skill-group">
       <p class="skill-group-title">Languages</p>
       <div class="skill-list">
@@ -453,14 +436,11 @@
   </div>
 </section>
 
-<!-- CONTACT -->
 <section id="contact">
   <p class="section-label">04 · Contact</p>
   <h2 class="section-title">Get In Touch</h2>
-  <p style="color: var(--muted); margin-bottom: 2rem; font-weight: 300;">
-    Open to Analytics Engineer, Data Analyst, and BI Analyst roles. Feel free to reach out.
-  </p>
-  <div class="contact-grid">
+  <p class="contact-intro">Open to Analytics Engineer, Data Analyst, and BI Analyst roles. Feel free to reach out.</p>
+  <div class="contact-grid fade-in">
     <a href="mailto:arundhati.ubhad13@gmail.com" class="contact-link">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
       arundhati.ubhad13@gmail.com
@@ -479,6 +459,13 @@
 <footer>
   <p>Built with HTML · Hosted on GitHub Pages · Arundhati Ubhad © 2025</p>
 </footer>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
 
 </body>
 </html>

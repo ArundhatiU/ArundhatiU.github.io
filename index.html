@@ -4,468 +4,591 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Arundhati Ubhad — Data Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Mono:wght@400;500&family=Manrope:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  :root {
-    --bg: #f7f5f0;
-    --bg2: #ffffff;
-    --bg3: #eeecea;
-    --border: rgba(0,0,0,0.08);
-    --border2: rgba(0,0,0,0.14);
-    --text: #1a1a1a;
-    --muted: #6b6b6b;
-    --hint: #999;
-    --accent: #2563eb;
-    --accent2: #16a34a;
-    --amber: #b45309;
-    --coral: #c2410c;
-    --tag-blue-bg: rgba(37,99,235,0.07);
-    --tag-blue-border: rgba(37,99,235,0.2);
-    --tag-green-bg: rgba(22,163,74,0.07);
-    --tag-green-border: rgba(22,163,74,0.2);
-    --tag-amber-bg: rgba(180,83,9,0.07);
-    --tag-amber-border: rgba(180,83,9,0.2);
-    --tag-coral-bg: rgba(194,65,12,0.07);
-    --tag-coral-border: rgba(194,65,12,0.2);
-    --tag-purple-bg: rgba(109,40,217,0.07);
-    --tag-purple-border: rgba(109,40,217,0.2);
-    --purple: #6d28d9;
-  }
+:root {
+  --cream: #f5f2ec;
+  --white: #ffffff;
+  --dark: #141414;
+  --dark2: #1e1e1e;
+  --dark3: #2a2a2a;
+  --border-light: rgba(0,0,0,0.09);
+  --border-dark: rgba(255,255,255,0.1);
+  --text: #1a1a1a;
+  --muted: #666;
+  --hint: #999;
+  --gold: #c9922a;
+  --gold-dim: rgba(201,146,42,0.15);
+  --gold-border: rgba(201,146,42,0.3);
+  --blue: #2563eb;
+  --green: #16a34a;
+  --coral: #c2410c;
+  --purple: #6d28d9;
+}
 
-  html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Manrope', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; font-size: 16px; }
 
-  body {
-    font-family: 'Manrope', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    font-size: 16px;
-  }
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.1rem 3rem;
+  background: rgba(245,242,236,0.9);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-light);
+}
+.nav-logo { font-family: 'DM Mono', monospace; font-size: 13px; color: var(--gold); letter-spacing: 0.06em; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-size: 13px; color: var(--muted); text-decoration: none; letter-spacing: 0.05em; font-weight: 500; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
 
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 1rem 2.5rem;
-    background: rgba(247,245,240,0.88);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--border);
-  }
-  .nav-logo {
-    font-family: 'DM Mono', monospace;
-    font-size: 13px; color: var(--accent); letter-spacing: 0.05em;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 13px; color: var(--muted); text-decoration: none;
-    letter-spacing: 0.04em; transition: color 0.2s; font-weight: 500;
-  }
-  .nav-links a:hover { color: var(--text); }
+/* ── HERO ── */
+.hero {
+  min-height: 100vh;
+  display: grid; grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 7rem 3rem 4rem;
+  max-width: 1140px; margin: 0 auto;
+  gap: 3rem;
+}
+.hero-left { display: flex; flex-direction: column; justify-content: center; }
+.hero-roles {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--gold);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  margin-bottom: 1.75rem;
+}
+.hero-roles span { color: var(--hint); margin: 0 0.5rem; }
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.2rem, 5.5vw, 5.2rem);
+  font-weight: 600; line-height: 1.0;
+  color: var(--text); letter-spacing: -0.02em;
+  margin-bottom: 1.5rem;
+}
+.hero-tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.25rem; font-style: italic;
+  color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6;
+  max-width: 460px;
+}
+.hero-meta {
+  display: flex; gap: 1.5rem; flex-wrap: wrap;
+  font-size: 12px; color: var(--hint);
+  font-family: 'DM Mono', monospace;
+  margin-bottom: 2.5rem;
+}
+.hero-meta span { display: flex; align-items: center; gap: 5px; }
+.hero-btns { display: flex; gap: 0.75rem; }
+.btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.65rem 1.4rem; border-radius: 4px;
+  font-size: 12px; font-weight: 600; text-decoration: none;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  transition: all 0.18s; cursor: pointer; font-family: 'DM Mono', monospace;
+}
+.btn-dark { background: var(--dark); color: var(--cream); border: 2px solid var(--dark); }
+.btn-dark:hover { background: var(--gold); border-color: var(--gold); }
+.btn-outline { background: transparent; color: var(--text); border: 2px solid var(--border-light); border-color: rgba(0,0,0,0.2); }
+.btn-outline:hover { border-color: var(--dark); }
 
-  section { padding: 6rem 0; max-width: 920px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; }
+.hero-right {
+  position: relative; display: flex; justify-content: center; align-items: center;
+}
+.hero-photo-wrap {
+  width: 100%; max-width: 420px;
+  aspect-ratio: 3/4;
+  border-radius: 6px; overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, #e8e2d8 0%, #d4ccbc 100%);
+}
+.hero-photo-placeholder {
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1rem;
+}
+.hero-photo-placeholder .initials {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 5rem; font-weight: 600;
+  color: rgba(0,0,0,0.2); letter-spacing: -0.02em; line-height: 1;
+}
+.hero-photo-placeholder .add-photo-hint {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: rgba(0,0,0,0.3);
+  letter-spacing: 0.1em; text-transform: uppercase;
+}
+.hero-photo-accent {
+  position: absolute; bottom: -1rem; right: -1rem;
+  width: 120px; height: 120px; border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold-border);
+  z-index: -1;
+}
 
-  .hero {
-    min-height: 100vh;
-    display: flex; flex-direction: column; justify-content: center;
-    padding-top: 8rem;
-    max-width: 920px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem;
-  }
-  .hero-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 12px; color: var(--accent);
-    letter-spacing: 0.14em; margin-bottom: 1.5rem; text-transform: uppercase;
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 7vw, 6rem);
-    font-weight: 600; line-height: 1.0;
-    margin-bottom: 1.75rem; color: var(--text); letter-spacing: -0.01em;
-  }
-  .hero h1 em { font-style: italic; color: var(--accent); }
-  .hero-sub {
-    font-size: 1.05rem; color: var(--muted);
-    max-width: 520px; margin-bottom: 2.5rem; font-weight: 400; line-height: 1.75;
-  }
-  .hero-links { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+/* ── ABOUT / JOURNEY (dark) ── */
+.journey {
+  background: var(--dark);
+  color: var(--white);
+  padding: 6rem 3rem;
+}
+.journey-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 5rem; align-items: start;
+}
+.section-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px; color: var(--gold);
+  letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.75rem;
+}
+.journey h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600;
+  line-height: 1.15; margin-bottom: 2rem; color: var(--white);
+}
+.journey-divider { width: 2.5rem; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+.journey-text p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.1rem; }
+.journey-text p strong { color: var(--white); }
 
-  .btn {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 0.6rem 1.3rem; border-radius: 6px;
-    font-size: 13px; font-weight: 500; text-decoration: none;
-    transition: all 0.18s; cursor: pointer;
-    font-family: 'Manrope', sans-serif; letter-spacing: 0.01em;
-  }
-  .btn-primary { background: var(--text); color: var(--bg); border: 1px solid var(--text); }
-  .btn-primary:hover { background: var(--accent); border-color: var(--accent); transform: translateY(-1px); }
-  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border2); }
-  .btn-outline:hover { border-color: var(--text); transform: translateY(-1px); }
+.journey-cards { display: flex; flex-direction: column; gap: 1rem; }
+.journey-card {
+  background: var(--dark2); border: 1px solid var(--border-dark);
+  border-left: 2px solid var(--gold);
+  border-radius: 6px; padding: 1.25rem 1.5rem;
+}
+.journey-card-title {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px; color: var(--gold);
+  letter-spacing: 0.1em; margin-bottom: 0.3rem;
+}
+.journey-card-org { font-size: 13px; color: var(--white); font-weight: 500; margin-bottom: 0.4rem; }
+.journey-card-desc { font-size: 12px; color: rgba(255,255,255,0.5); line-height: 1.65; }
 
-  .section-label {
-    font-family: 'DM Mono', monospace;
-    font-size: 11px; color: var(--hint);
-    letter-spacing: 0.14em; margin-bottom: 0.5rem; text-transform: uppercase;
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem; font-weight: 600;
-    margin-bottom: 3rem; color: var(--text); letter-spacing: -0.01em;
-  }
+/* ── PROJECTS ── */
+.projects-section { padding: 6rem 3rem; max-width: 1140px; margin: 0 auto; }
+.section-header { margin-bottom: 3rem; }
+.section-header h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 600;
+  color: var(--text); margin-bottom: 0.5rem;
+}
+.section-header p { color: var(--muted); font-size: 0.9rem; max-width: 540px; }
 
-  .about-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start; }
-  .about-text p { color: var(--muted); margin-bottom: 1rem; font-weight: 400; font-size: 1rem; line-height: 1.8; }
-  .about-text p strong { color: var(--text); font-weight: 600; }
-  .about-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .stat-card {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.25rem; text-align: center;
-  }
-  .stat-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem; font-weight: 600; color: var(--accent); line-height: 1;
-  }
-  .stat-label { font-size: 11px; color: var(--hint); margin-top: 5px; letter-spacing: 0.04em; font-family: 'DM Mono', monospace; }
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+.project-card {
+  background: var(--white); border: 1px solid var(--border-light);
+  border-radius: 8px; padding: 1.75rem;
+  position: relative; overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.project-card:hover { box-shadow: 0 6px 30px rgba(0,0,0,0.08); transform: translateY(-2px); }
+.project-card-kicker {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase;
+  margin-bottom: 0.75rem; display: flex; align-items: center; gap: 6px;
+}
+.project-card-kicker .dot { width: 6px; height: 6px; border-radius: 50%; }
+.kicker-blue { color: var(--blue); } .dot-blue { background: var(--blue); }
+.kicker-amber { color: var(--gold); } .dot-amber { background: var(--gold); }
+.kicker-green { color: var(--green); } .dot-green { background: var(--green); }
+.kicker-coral { color: var(--coral); } .dot-coral { background: var(--coral); }
+.kicker-purple { color: var(--purple); } .dot-purple { background: var(--purple); }
 
-  .projects-grid { display: grid; gap: 1.25rem; }
-  .project-card {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 12px; padding: 1.75rem 2rem;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
-    position: relative; overflow: hidden;
-  }
-  .project-card:hover {
-    border-color: var(--border2);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
-    transform: translateY(-2px);
-  }
-  .project-card::after {
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: transparent; transition: background 0.2s;
-  }
-  .project-card.blue:hover::after   { background: var(--accent); }
-  .project-card.amber:hover::after  { background: var(--amber); }
-  .project-card.green:hover::after  { background: var(--accent2); }
-  .project-card.coral:hover::after  { background: var(--coral); }
-  .project-card.purple:hover::after { background: var(--purple); }
+.project-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem; font-weight: 600;
+  color: var(--text); margin-bottom: 0.75rem; letter-spacing: -0.01em;
+}
+.project-highlight {
+  background: var(--cream); border-left: 2px solid var(--border-light);
+  padding: 0.6rem 0.85rem; margin-bottom: 1rem;
+  font-size: 12px; color: var(--muted); font-family: 'DM Mono', monospace;
+  border-radius: 0 4px 4px 0; line-height: 1.6;
+}
+.project-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.75; margin-bottom: 1.25rem; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 1.25rem; }
+.tag {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  padding: 3px 9px; border-radius: 3px; border: 1px solid;
+}
+.tag-blue   { background: rgba(37,99,235,0.06);  color: var(--blue);   border-color: rgba(37,99,235,0.2); }
+.tag-amber  { background: rgba(201,146,42,0.07); color: var(--gold);   border-color: rgba(201,146,42,0.25); }
+.tag-green  { background: rgba(22,163,74,0.06);  color: var(--green);  border-color: rgba(22,163,74,0.2); }
+.tag-coral  { background: rgba(194,65,12,0.06);  color: var(--coral);  border-color: rgba(194,65,12,0.2); }
+.tag-purple { background: rgba(109,40,217,0.06); color: var(--purple); border-color: rgba(109,40,217,0.2); }
 
-  .project-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.6rem; }
-  .project-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem; font-weight: 600; color: var(--text); letter-spacing: -0.01em;
-  }
-  .project-link {
-    color: var(--hint); text-decoration: none;
-    font-size: 12px; display: flex; align-items: center; gap: 4px;
-    transition: color 0.2s; font-family: 'DM Mono', monospace;
-    flex-shrink: 0; margin-left: 1rem; padding-top: 3px;
-  }
-  .project-link:hover { color: var(--accent); }
-  .project-link svg { width: 12px; height: 12px; }
-  .project-desc { color: var(--muted); font-size: 0.9rem; font-weight: 400; margin-bottom: 1.25rem; line-height: 1.7; }
-  .project-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .tag {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; padding: 3px 9px; border-radius: 20px; letter-spacing: 0.03em;
-  }
-  .tag.blue   { background: var(--tag-blue-bg);   color: var(--accent);  border: 1px solid var(--tag-blue-border); }
-  .tag.green  { background: var(--tag-green-bg);  color: var(--accent2); border: 1px solid var(--tag-green-border); }
-  .tag.amber  { background: var(--tag-amber-bg);  color: var(--amber);   border: 1px solid var(--tag-amber-border); }
-  .tag.coral  { background: var(--tag-coral-bg);  color: var(--coral);   border: 1px solid var(--tag-coral-border); }
-  .tag.purple { background: var(--tag-purple-bg); color: var(--purple);  border: 1px solid var(--tag-purple-border); }
+.project-link {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: var(--text); text-decoration: none;
+  border: 1px solid var(--border-light); border-radius: 3px;
+  padding: 0.35rem 0.75rem; transition: all 0.18s;
+}
+.project-link:hover { border-color: var(--text); }
+.project-link svg { width: 11px; height: 11px; }
 
-  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-  .skill-group {
-    background: var(--bg2); border: 1px solid var(--border);
-    border-radius: 10px; padding: 1.25rem 1.5rem;
-  }
-  .skill-group-title {
-    font-family: 'DM Mono', monospace;
-    font-size: 10px; color: var(--hint);
-    letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 0.85rem;
-  }
-  .skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
-  .skill-pill {
-    font-size: 12px; padding: 4px 10px;
-    background: var(--bg3); border: 1px solid var(--border);
-    border-radius: 4px; color: var(--muted); font-weight: 500;
-  }
+/* ── SKILLS ── */
+.skills-section { background: var(--white); padding: 6rem 3rem; }
+.skills-inner { max-width: 1140px; margin: 0 auto; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
+.skill-group {
+  border: 1px solid var(--border-light); border-radius: 8px;
+  padding: 1.5rem;
+}
+.skill-group-title {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--hint); letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 1rem;
+}
+.skill-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.skill-pill {
+  font-size: 12px; padding: 4px 10px;
+  background: var(--cream); border: 1px solid var(--border-light);
+  border-radius: 3px; color: var(--muted); font-weight: 500;
+}
 
-  .contact-intro { color: var(--muted); margin-bottom: 2rem; font-weight: 400; max-width: 480px; line-height: 1.75; }
-  .contact-grid { display: flex; gap: 0.75rem; flex-wrap: wrap; }
-  .contact-link {
-    display: flex; align-items: center; gap: 8px;
-    padding: 0.7rem 1.4rem; background: var(--bg2);
-    border: 1px solid var(--border2); border-radius: 8px;
-    text-decoration: none; color: var(--text);
-    font-size: 13px; font-weight: 500; transition: all 0.18s;
-  }
-  .contact-link:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); box-shadow: 0 2px 12px rgba(37,99,235,0.08); }
-  .contact-link svg { width: 15px; height: 15px; flex-shrink: 0; }
+/* ── CONTACT (dark) ── */
+.contact-section {
+  background: var(--dark); color: var(--white);
+  padding: 7rem 3rem; text-align: center;
+}
+.contact-kicker {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: var(--gold); letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 1.5rem;
+}
+.contact-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 600;
+  color: var(--white); margin-bottom: 1.25rem; line-height: 1.2;
+}
+.contact-section p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem; font-style: italic;
+  color: rgba(255,255,255,0.55); max-width: 580px; margin: 0 auto 3rem; line-height: 1.7;
+}
+.contact-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3rem; }
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0.7rem 1.75rem;
+  font-family: 'DM Mono', monospace; font-size: 12px;
+  font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--white); text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.25); border-radius: 3px;
+  transition: all 0.18s;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+.contact-footer-text {
+  font-family: 'DM Mono', monospace; font-size: 11px;
+  color: rgba(255,255,255,0.25); letter-spacing: 0.06em;
+}
+.contact-footer-text span { display: block; margin-top: 0.5rem; }
 
-  footer {
-    text-align: center; padding: 2rem;
-    border-top: 1px solid var(--border);
-    color: var(--hint); font-size: 12px; font-family: 'DM Mono', monospace;
-  }
+/* ── STATS BAR ── */
+.stats-bar {
+  background: var(--dark2); border-top: 1px solid rgba(255,255,255,0.06);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  padding: 2.5rem 3rem;
+}
+.stats-bar-inner {
+  max-width: 1140px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1rem; text-align: center;
+}
+.stat-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.6rem; font-weight: 600; color: var(--gold); line-height: 1;
+}
+.stat-lbl {
+  font-family: 'DM Mono', monospace; font-size: 10px;
+  color: rgba(255,255,255,0.35); letter-spacing: 0.1em; text-transform: uppercase; margin-top: 5px;
+}
 
-  .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.55s ease, transform 0.55s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
+/* ── ANIMATIONS ── */
+.fade-in { opacity: 0; transform: translateY(18px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-  @media (max-width: 640px) {
-    .about-grid { grid-template-columns: 1fr; gap: 2rem; }
-    nav { padding: 1rem 1.25rem; }
-    .nav-links { gap: 1.25rem; }
-    section { padding: 4rem 1.25rem; }
-    .hero { padding-left: 1.25rem; padding-right: 1.25rem; }
-    .project-card { padding: 1.35rem 1.25rem; }
-  }
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.25rem; }
+  .hero { grid-template-columns: 1fr; padding: 7rem 1.5rem 3rem; gap: 2rem; }
+  .hero-right { order: -1; }
+  .hero-photo-wrap { max-width: 260px; margin: 0 auto; }
+  .journey-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .journey, .projects-section, .skills-section, .contact-section { padding: 4rem 1.5rem; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+  .stats-bar-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <span class="nav-logo">arundhati.ubhad</span>
+  <span class="nav-logo">Arundhati Ubhad</span>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#projects">Work</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
+<!-- ── HERO ── -->
 <div class="hero">
-  <p class="hero-label">Analytics Engineer &amp; Data Analyst</p>
-  <h1>Arundhati<br/><em>Ubhad</em></h1>
-  <p class="hero-sub">
-    M.S. Data Analytics Engineering · Northeastern University.<br/>
-    Building reliable data pipelines, dimensional models, and analytics products with SQL, Python, dbt, and Snowflake.
-  </p>
-  <div class="hero-links">
-    <a href="#projects" class="btn btn-primary">View Projects</a>
-    <a href="https://www.linkedin.com/in/arundhati-ubhad-868799168/" target="_blank" class="btn btn-outline">LinkedIn</a>
-    <a href="https://github.com/ArundhatiU" target="_blank" class="btn btn-outline">GitHub</a>
+  <div class="hero-left">
+    <p class="hero-roles">Analytics Engineer <span>·</span> Data Analyst <span>·</span> BI Analyst</p>
+    <h1>Arundhati Ubhad</h1>
+    <p class="hero-tagline">Between raw data and business decisions lies a space where pipelines, models, and dashboards tell the truth.</p>
+    <div class="hero-meta">
+      <span>📍 Santa Clara, CA</span>
+      <span>🎓 Northeastern University</span>
+      <span>💼 Open to Work</span>
+    </div>
+    <div class="hero-btns">
+      <a href="#projects" class="btn btn-dark">Explore My Work</a>
+      <a href="#contact" class="btn btn-outline">Let's Connect</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-wrap">
+      <div class="hero-photo-placeholder">
+        <div class="initials">AU</div>
+        <div class="add-photo-hint">Add your photo here</div>
+      </div>
+    </div>
+    <div class="hero-photo-accent"></div>
   </div>
 </div>
 
-<section id="about">
-  <p class="section-label">01 · About</p>
-  <h2 class="section-title">Who I Am</h2>
-  <div class="about-grid fade-in">
-    <div class="about-text">
-      <p>I am a <strong>data professional</strong> with 3+ years of industry experience in data analysis and quality, currently completing my <strong>M.S. in Data Analytics Engineering</strong> at Northeastern University (GPA: 3.95).</p>
-      <p>My work spans the full data stack — from building <strong>ELT pipelines on AWS</strong> and designing <strong>dimensional models</strong> to building KPI dashboards and applying <strong>machine learning</strong> to real-world datasets.</p>
-      <p>I am actively seeking <strong>Analytics Engineer</strong> and <strong>Data Analyst</strong> roles where I can help teams build trusted, analytics-ready data infrastructure.</p>
+<!-- ── JOURNEY / ABOUT (dark) ── -->
+<div class="journey" id="about">
+  <div class="journey-inner">
+    <div class="journey-text fade-in">
+      <p class="section-kicker">The Journey</p>
+      <h2>From Data Quality<br/>to Data Engineering</h2>
+      <div class="journey-divider"></div>
+      <p>I started my career validating data — ensuring telecom and retail pipelines at <strong>T-Mobile</strong> and <strong>Office Depot</strong> met quality standards across millions of records. That work taught me what bad data costs, and how much good architecture prevents.</p>
+      <p>It pulled me back to school. My <strong>M.S. in Data Analytics Engineering at Northeastern</strong> (GPA: 3.95) gave me the other side of the stack — building the pipelines, not just auditing them.</p>
+      <p>Now I build <strong>ELT pipelines on AWS</strong>, design <strong>dimensional models in dbt and Snowflake</strong>, and turn analytical results into dashboards that help teams make faster, better decisions.</p>
     </div>
-    <div class="about-stats">
-      <div class="stat-card">
-        <div class="stat-number">3+</div>
-        <div class="stat-label">Years Experience</div>
+    <div class="journey-cards fade-in">
+      <div class="journey-card">
+        <div class="journey-card-title">Data Analyst · CompuCom / Office Depot</div>
+        <div class="journey-card-org">CompuCom Systems (Client: Office Depot)</div>
+        <div class="journey-card-desc">SQL-driven reporting, KPI dashboards, and retail data analysis across product and operations teams.</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">3.95</div>
-        <div class="stat-label">Graduate GPA</div>
+      <div class="journey-card">
+        <div class="journey-card-title">Data Quality Analyst · Amdocs / T-Mobile</div>
+        <div class="journey-card-org">Amdocs DVCI (Client: T-Mobile)</div>
+        <div class="journey-card-desc">ETL validation, defect tracking, and data quality governance for telecom billing pipelines.</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-number">5</div>
-        <div class="stat-label">Projects</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Tools & Tech</div>
+      <div class="journey-card">
+        <div class="journey-card-title">M.S. Data Analytics Engineering</div>
+        <div class="journey-card-org">Northeastern University · GPA 3.95 · Dec 2025</div>
+        <div class="journey-card-desc">Data warehousing, ML, cloud platforms (AWS, GCP), dbt, Snowflake, PySpark.</div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section id="projects">
-  <p class="section-label">02 · Projects</p>
-  <h2 class="section-title">What I've Built</h2>
+<!-- ── STATS BAR ── -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div><div class="stat-num">3+</div><div class="stat-lbl">Years Experience</div></div>
+    <div><div class="stat-num">3.95</div><div class="stat-lbl">Graduate GPA</div></div>
+    <div><div class="stat-num">5</div><div class="stat-lbl">Projects</div></div>
+    <div><div class="stat-num">10+</div><div class="stat-lbl">Tools & Tech</div></div>
+  </div>
+</div>
+
+<!-- ── PROJECTS ── -->
+<div class="projects-section" id="projects">
+  <div class="section-header fade-in">
+    <p class="section-kicker" style="color:var(--gold);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">Featured Work</p>
+    <h2>Production Systems &amp; Analytics</h2>
+    <p>Projects demonstrating end-to-end data engineering, analytics, and machine learning capabilities.</p>
+  </div>
   <div class="projects-grid">
 
-    <div class="project-card blue fade-in">
-      <div class="project-header">
-        <h3 class="project-title">Airbnb Analytics Pipeline</h3>
-        <a href="https://github.com/ArundhatiU/dbt-airbnb-pipeline" target="_blank" class="project-link">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <p class="project-desc">Production-style dbt Core project on Snowflake implementing a layered architecture (staging → intermediate → marts) with SCD Type 2 snapshots, data quality testing, and end-to-end lineage documentation.</p>
+    <div class="project-card fade-in">
+      <div class="project-card-kicker kicker-blue"><span class="dot dot-blue"></span>Data Engineering · dbt</div>
+      <h3 class="project-title">Airbnb Analytics Pipeline</h3>
+      <div class="project-highlight">Layered architecture · SCD Type 2 · Data quality tests · Full lineage</div>
+      <p class="project-desc">Production-style dbt Core project on Snowflake implementing staging → intermediate → marts layers with SCD Type 2 snapshots and end-to-end lineage documentation.</p>
       <div class="project-tags">
-        <span class="tag blue">dbt Core</span>
-        <span class="tag blue">Snowflake</span>
-        <span class="tag blue">SQL</span>
-        <span class="tag blue">Data Modeling</span>
-        <span class="tag blue">SCD Type 2</span>
+        <span class="tag tag-blue">dbt Core</span>
+        <span class="tag tag-blue">Snowflake</span>
+        <span class="tag tag-blue">SQL</span>
+        <span class="tag tag-blue">Data Modeling</span>
+        <span class="tag tag-blue">SCD Type 2</span>
       </div>
+      <a href="https://github.com/ArundhatiU/dbt-airbnb-pipeline" target="_blank" class="project-link">
+        GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
 
-    <div class="project-card amber fade-in">
-      <div class="project-header">
-        <h3 class="project-title">Inflation Intelligence</h3>
-        <a href="https://github.com/ArundhatiU/IE6750-Project1-OnPrem" target="_blank" class="project-link">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <p class="project-desc">Serverless ELT pipeline on AWS ingesting U.S. inflation and unemployment data into Parquet datasets with columnar partitioning. Lambda-triggered Glue workflows automate end-to-end refresh with KPI dashboards built in Tableau.</p>
+    <div class="project-card fade-in">
+      <div class="project-card-kicker kicker-amber"><span class="dot dot-amber"></span>Cloud ELT · AWS</div>
+      <h3 class="project-title">Inflation Intelligence</h3>
+      <div class="project-highlight">Serverless pipeline · Lambda-triggered · Parquet + Athena · Tableau KPIs</div>
+      <p class="project-desc">Serverless ELT pipeline on AWS ingesting U.S. inflation and unemployment data into columnar Parquet datasets. Lambda-triggered Glue workflows automate end-to-end refresh.</p>
       <div class="project-tags">
-        <span class="tag amber">AWS Glue</span>
-        <span class="tag amber">S3 · Lambda · Athena</span>
-        <span class="tag amber">Parquet</span>
-        <span class="tag amber">Tableau</span>
-        <span class="tag amber">ELT</span>
+        <span class="tag tag-amber">AWS Glue</span>
+        <span class="tag tag-amber">S3 · Lambda</span>
+        <span class="tag tag-amber">Athena</span>
+        <span class="tag tag-amber">Parquet</span>
+        <span class="tag tag-amber">Tableau</span>
       </div>
+      <a href="https://github.com/ArundhatiU/IE6750-Project1-OnPrem" target="_blank" class="project-link">
+        GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
 
-    <div class="project-card green fade-in">
-      <div class="project-header">
-        <h3 class="project-title">NLP Sentiment Analysis</h3>
-        <a href="https://github.com/ArundhatiU/NLP_Sentiment_Analysis" target="_blank" class="project-link">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <p class="project-desc">Sentiment classification on Amazon Fine Food Reviews using fine-tuned RoBERTa transformer. Full NLP pipeline covering preprocessing, model training, evaluation, and inference on 500K+ reviews.</p>
+    <div class="project-card fade-in">
+      <div class="project-card-kicker kicker-green"><span class="dot dot-green"></span>NLP · Machine Learning</div>
+      <h3 class="project-title">NLP Sentiment Analysis</h3>
+      <div class="project-highlight">500K+ reviews · Fine-tuned RoBERTa · Full training pipeline</div>
+      <p class="project-desc">Sentiment classification on Amazon Fine Food Reviews using a fine-tuned RoBERTa transformer. Full NLP pipeline: preprocessing, model training, evaluation, and inference.</p>
       <div class="project-tags">
-        <span class="tag green">RoBERTa</span>
-        <span class="tag green">NLP</span>
-        <span class="tag green">Python</span>
-        <span class="tag green">HuggingFace</span>
-        <span class="tag green">scikit-learn</span>
+        <span class="tag tag-green">RoBERTa</span>
+        <span class="tag tag-green">HuggingFace</span>
+        <span class="tag tag-green">Python</span>
+        <span class="tag tag-green">scikit-learn</span>
+        <span class="tag tag-green">NLP</span>
       </div>
+      <a href="https://github.com/ArundhatiU/NLP_Sentiment_Analysis" target="_blank" class="project-link">
+        GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
 
-    <div class="project-card purple fade-in">
-      <div class="project-header">
-        <h3 class="project-title">Music Streaming Database</h3>
-        <a href="https://github.com/ArundhatiU/music_streaming_db" target="_blank" class="project-link">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <p class="project-desc">Relational database design for a music streaming platform — schema modeling, normalization, and analytical SQL queries covering user listening behavior, artist performance, and subscription analytics.</p>
+    <div class="project-card fade-in">
+      <div class="project-card-kicker kicker-purple"><span class="dot dot-purple"></span>Database Design · SQL</div>
+      <h3 class="project-title">Music Streaming Database</h3>
+      <div class="project-highlight">Full schema design · Normalization · Analytical SQL queries</div>
+      <p class="project-desc">Relational database for a music streaming platform — schema modeling, normalization, and analytical SQL queries covering user listening behavior and subscription analytics.</p>
       <div class="project-tags">
-        <span class="tag purple">SQL</span>
-        <span class="tag purple">Database Design</span>
-        <span class="tag purple">Schema Modeling</span>
-        <span class="tag purple">MySQL</span>
+        <span class="tag tag-purple">SQL</span>
+        <span class="tag tag-purple">MySQL</span>
+        <span class="tag tag-purple">Schema Design</span>
+        <span class="tag tag-purple">Normalization</span>
       </div>
+      <a href="https://github.com/ArundhatiU/music_streaming_db" target="_blank" class="project-link">
+        GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
 
-    <div class="project-card coral fade-in">
-      <div class="project-header">
-        <h3 class="project-title">VTT — Vision-to-Text Image Captioning</h3>
-        <a href="https://github.com/ArundhatiU/GenAI_Project" target="_blank" class="project-link">
-          GitHub
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-        </a>
-      </div>
-      <p class="project-desc">Modular deep learning pipeline bridging Computer Vision and NLP using a ResNet-50 encoder and LSTM decoder. Trained on Flickr8k/30k datasets, achieving BLEU-4 of 0.1199 with Beam Search decoding outperforming greedy and frequency baselines.</p>
+    <div class="project-card fade-in" style="grid-column: 1 / -1;">
+      <div class="project-card-kicker kicker-coral"><span class="dot dot-coral"></span>Deep Learning · Computer Vision + NLP</div>
+      <h3 class="project-title">VTT — Vision-to-Text Image Captioning</h3>
+      <div class="project-highlight">BLEU-4: 0.1199 · Beam Search decoding · Flickr8k/30k · ResNet-50 + LSTM</div>
+      <p class="project-desc">Modular deep learning pipeline bridging Computer Vision and NLP using a ResNet-50 encoder and LSTM decoder. Trained on Flickr8k/30k datasets with Beam Search decoding outperforming greedy and frequency baselines.</p>
       <div class="project-tags">
-        <span class="tag coral">ResNet-50</span>
-        <span class="tag coral">LSTM</span>
-        <span class="tag coral">PyTorch</span>
-        <span class="tag coral">NLP</span>
-        <span class="tag coral">BLEU · METEOR · BERTScore</span>
+        <span class="tag tag-coral">ResNet-50</span>
+        <span class="tag tag-coral">LSTM</span>
+        <span class="tag tag-coral">PyTorch</span>
+        <span class="tag tag-coral">BLEU · METEOR</span>
+        <span class="tag tag-coral">BERTScore</span>
+        <span class="tag tag-coral">Beam Search</span>
       </div>
+      <a href="https://github.com/ArundhatiU/GenAI_Project" target="_blank" class="project-link" style="margin-top:0.5rem;">
+        GitHub
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
     </div>
 
   </div>
-</section>
+</div>
 
-<section id="skills">
-  <p class="section-label">03 · Skills</p>
-  <h2 class="section-title">Technical Stack</h2>
-  <div class="skills-grid fade-in">
-    <div class="skill-group">
-      <p class="skill-group-title">Languages</p>
-      <div class="skill-list">
-        <span class="skill-pill">Python</span>
-        <span class="skill-pill">SQL</span>
-        <span class="skill-pill">PySpark</span>
-        <span class="skill-pill">PL/SQL</span>
+<!-- ── SKILLS ── -->
+<div class="skills-section" id="skills">
+  <div class="skills-inner">
+    <p class="section-kicker" style="color:var(--gold);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;margin-bottom:0.5rem;">Technical Stack</p>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,2.8rem);font-weight:600;color:var(--text);">Skills &amp; Tools</h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-group">
+        <p class="skill-group-title">Languages</p>
+        <div class="skill-list">
+          <span class="skill-pill">Python</span><span class="skill-pill">SQL</span>
+          <span class="skill-pill">PySpark</span><span class="skill-pill">PL/SQL</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Data Engineering</p>
-      <div class="skill-list">
-        <span class="skill-pill">dbt Core</span>
-        <span class="skill-pill">Snowflake</span>
-        <span class="skill-pill">Talend</span>
-        <span class="skill-pill">AWS Glue</span>
-        <span class="skill-pill">S3 · Lambda · Athena</span>
+      <div class="skill-group">
+        <p class="skill-group-title">Data Engineering</p>
+        <div class="skill-list">
+          <span class="skill-pill">dbt Core</span><span class="skill-pill">Snowflake</span>
+          <span class="skill-pill">Talend</span><span class="skill-pill">AWS Glue</span>
+          <span class="skill-pill">S3 · Lambda · Athena</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Visualization & BI</p>
-      <div class="skill-list">
-        <span class="skill-pill">Tableau</span>
-        <span class="skill-pill">Power BI</span>
-        <span class="skill-pill">Matplotlib</span>
-        <span class="skill-pill">Seaborn</span>
+      <div class="skill-group">
+        <p class="skill-group-title">Visualization & BI</p>
+        <div class="skill-list">
+          <span class="skill-pill">Tableau</span><span class="skill-pill">Power BI</span>
+          <span class="skill-pill">Matplotlib</span><span class="skill-pill">Seaborn</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Databases</p>
-      <div class="skill-list">
-        <span class="skill-pill">MySQL</span>
-        <span class="skill-pill">PostgreSQL</span>
-        <span class="skill-pill">BigQuery</span>
-        <span class="skill-pill">Oracle</span>
+      <div class="skill-group">
+        <p class="skill-group-title">Databases</p>
+        <div class="skill-list">
+          <span class="skill-pill">MySQL</span><span class="skill-pill">PostgreSQL</span>
+          <span class="skill-pill">BigQuery</span><span class="skill-pill">Oracle</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">ML & Analytics</p>
-      <div class="skill-list">
-        <span class="skill-pill">scikit-learn</span>
-        <span class="skill-pill">pandas · NumPy</span>
-        <span class="skill-pill">NLP · RoBERTa</span>
-        <span class="skill-pill">A/B Testing</span>
+      <div class="skill-group">
+        <p class="skill-group-title">ML & Analytics</p>
+        <div class="skill-list">
+          <span class="skill-pill">scikit-learn</span><span class="skill-pill">pandas · NumPy</span>
+          <span class="skill-pill">NLP · RoBERTa</span><span class="skill-pill">A/B Testing</span>
+        </div>
       </div>
-    </div>
-    <div class="skill-group">
-      <p class="skill-group-title">Practices & Tools</p>
-      <div class="skill-list">
-        <span class="skill-pill">Git · GitHub</span>
-        <span class="skill-pill">CI/CD</span>
-        <span class="skill-pill">Agile · Jira</span>
-        <span class="skill-pill">Dimensional Modeling</span>
+      <div class="skill-group">
+        <p class="skill-group-title">Practices & Tools</p>
+        <div class="skill-list">
+          <span class="skill-pill">Git · GitHub</span><span class="skill-pill">CI/CD</span>
+          <span class="skill-pill">Agile · Jira</span><span class="skill-pill">Dimensional Modeling</span>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<section id="contact">
-  <p class="section-label">04 · Contact</p>
-  <h2 class="section-title">Get In Touch</h2>
-  <p class="contact-intro">Open to Analytics Engineer, Data Analyst, and BI Analyst roles. Feel free to reach out.</p>
-  <div class="contact-grid fade-in">
-    <a href="mailto:arundhati.ubhad13@gmail.com" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      arundhati.ubhad13@gmail.com
+<!-- ── CONTACT (dark) ── -->
+<div class="contact-section" id="contact">
+  <p class="contact-kicker">Let's Build</p>
+  <h2>Currently Seeking Analytics<br/>Engineer &amp; Data Analyst Roles</h2>
+  <p>Open to roles where building trusted data infrastructure intersects with real business impact — where good pipelines and good decisions go hand in hand.</p>
+  <div class="contact-btns">
+    <a href="mailto:arundhati.ubhad13@gmail.com" class="btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
     </a>
-    <a href="https://www.linkedin.com/in/arundhati-ubhad-868799168/" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+    <a href="https://www.linkedin.com/in/arundhati-ubhad-868799168/" target="_blank" class="btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
       LinkedIn
     </a>
-    <a href="https://github.com/ArundhatiU" target="_blank" class="contact-link">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+    <a href="https://github.com/ArundhatiU" target="_blank" class="btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
       GitHub
     </a>
   </div>
-</section>
-
-<footer>
-  <p>Built with HTML · Hosted on GitHub Pages · Arundhati Ubhad © 2025</p>
-</footer>
+  <div class="contact-footer-text">
+    © 2025 Arundhati Ubhad · Built with HTML · Hosted on GitHub Pages
+    <span>Still learning. Still building. Still discovering.</span>
+  </div>
+</div>
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
-  }, { threshold: 0.1 });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>

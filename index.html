@@ -235,7 +235,16 @@ nav {
 .project-link svg { width: 11px; height: 11px; }
 
 /* ── SKILLS ── */
-.skills-section { background: var(--white); padding: 6rem 3rem; }
+.skills-section { 
+  background: var(--white); 
+  padding: 6rem 3rem;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent, transparent 18px,
+    rgba(201,146,42,0.07) 18px,
+    rgba(201,146,42,0.07) 19px
+  );
+}
 .skills-inner { max-width: 1140px; margin: 0 auto; }
 .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 3rem; }
 .skill-group {
